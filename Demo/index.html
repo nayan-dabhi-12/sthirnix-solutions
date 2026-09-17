@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hero Demo — Sthirnix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="demo.css" />
+</head>
+
+<body>
+
+    <!-- ============================== header ============================== -->
+    <header class="hdr">
+        <div class="hdr__pill">
+            <a class="hdr__logo" href="#" aria-label="Sthirnix Solutions">
+                <img src="../assets/logo.png" alt="Sthirnix Solutions" />
+            </a>
+
+            <nav class="hdr__nav">
+                <span class="hdr__indicator" id="hdrIndicator"></span>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#industries">Industries</a>
+                <a href="#cases">Case Studies</a>
+                <a href="#resources">Resources</a>
+            </nav>
+
+            <a class="hdr__cta" href="#contact">
+                <span>Get a Quote</span>
+                <i class="hdr__cta-dot"></i>
+                <span class="hdr__cta-shine"></span>
+            </a>
+
+            <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#resources">Resources</a>
+        <a class="hdr__cta" href="#contact" style="margin-top:24px;align-self:flex-start">Get a Quote</a>
+    </nav>
+
+    <!-- ============================== hero ============================== -->
+    <section class="hero" id="hero">
+        <div class="hero__bg">
+            <div class="hero__blob hero__blob--a"></div>
+            <div class="hero__blob hero__blob--b"></div>
+            <div class="hero__blob hero__blob--c"></div>
+        </div>
+
+        <!-- Faint infinity track decoration -->
+        <svg class="hero__infinity-track" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <defs>
+                <linearGradient id="infGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="rgba(255,90,31,0.18)" />
+                    <stop offset="50%" stop-color="rgba(108,92,231,0.10)" />
+                    <stop offset="100%" stop-color="rgba(59,144,245,0.18)" />
+                </linearGradient>
+            </defs>
+            <path d="M 300 300
+           C 300 150, 450 150, 600 300
+           C 750 450, 900 450, 900 300
+           C 900 150, 750 150, 600 300
+           C 450 450, 300 450, 300 300 Z" fill="none" stroke="url(#infGrad)" stroke-width="1.5"
+                stroke-dasharray="6 10" />
+        </svg>
+
+        <!-- Icons will be positioned absolutely here via JS -->
+        <div class="hero__icons" id="heroIcons"></div>
+
+        <!-- Content sits centered on top -->
+        <div class="hero__content">
+            <p class="hero__eyebrow">
+                <span class="hero__eyebrow-dot"></span>
+                Microsoft Solutions Partner
+            </p>
+
+            <h1 class="hero__title">
+                <span class="hero__title-line"><span>Accelerate Your</span></span>
+                <span class="hero__title-line"><span>Enterprise Growth with</span></span>
+                <span class="hero__title-line"><span><em class="hero__grad">AI-Powered</em> Microsoft</span></span>
+                <span class="hero__title-line"><span>Solutions</span></span>
+            </h1>
+
+            <div class="hero__rule"></div>
+
+            <p class="hero__lead">
+                We transform fragmented data into frictionless outcomes. From rapid Microsoft
+                Dynamics 365 implementations to intelligent Power Platform automation, Sthirnix
+                Solutions delivers scalable, cloud-native architecture tailored for ambitious businesses.
+            </p>
+
+            <div class="hero__actions">
+                <a class="hero__btn hero__btn--primary" href="#contact">
+                    <span>Get a Custom Estimate</span>
+                    <span class="hero__btn-shine"></span>
+                </a>
+                <a class="hero__btn hero__btn--ghost" href="#cases">
+                    <span class="hero__btn-play"></span>
+                    <span>Watch Client Success Stories</span>
+                </a>
+            </div>
+
+            <div class="hero__trust">
+                <div class="hero__trust-item"><b>8+</b><span>Years</span></div>
+                <div class="hero__trust-item"><b>140+</b><span>Projects</span></div>
+                <div class="hero__trust-item"><b>98%</b><span>Satisfaction</span></div>
+            </div>
+        </div>
+
+        <!-- Marquee -->
+        <div class="hero__marquee">
+            <div class="hero__marquee-track">
+                <span>Dynamics 365<i></i></span>
+                <span>Power Platform<i></i></span>
+                <span>Azure Cloud<i></i></span>
+                <span>Copilot Studio<i></i></span>
+                <span>Data &amp; Fabric<i></i></span>
+                <span>Managed Services<i></i></span>
+                <span>Dynamics 365<i></i></span>
+                <span>Power Platform<i></i></span>
+                <span>Azure Cloud<i></i></span>
+                <span>Copilot Studio<i></i></span>
+                <span>Data &amp; Fabric<i></i></span>
+                <span>Managed Services<i></i></span>
+            </div>
+        </div>
+    </section>
+
+    <section style="height:120vh;background:#fff"></section>
+
+    <!-- product icons library -->
+    <template id="logoLib">
+        <!-- ============ DYNAMICS 365 ============ -->
+        <div data-label="Dynamics 365 Sales">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="dyn1" x1="0" y1="0" x2="40" y2="40">
+                        <stop stop-color="#0B53CE" />
+                        <stop offset="1" stop-color="#7252AA" />
+                    </linearGradient>
+                </defs>
+                <path d="M0 0L50 18V42L10 50V28L0 22Z" fill="url(#dyn1)" />
+                <path d="M30 20L15 26V42L30 36Z" fill="#B0ADFF" />
+            </svg>
+        </div>
+        <div data-label="Dynamics 365 Service">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="dyn2" x1="0" y1="0" x2="40" y2="40">
+                        <stop stop-color="#00838F" />
+                        <stop offset="1" stop-color="#00BCD4" />
+                    </linearGradient>
+                </defs>
+                <path d="M0 0L50 18V42L10 50V28L0 22Z" fill="url(#dyn2)" />
+                <path d="M30 20L15 26V42L30 36Z" fill="#B2EBF2" />
+            </svg>
+        </div>
+        <div data-label="Dynamics 365 Field">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="dyn3" x1="0" y1="0" x2="40" y2="40">
+                        <stop stop-color="#E65100" />
+                        <stop offset="1" stop-color="#FF9800" />
+                    </linearGradient>
+                </defs>
+                <path d="M0 0L50 18V42L10 50V28L0 22Z" fill="url(#dyn3)" />
+                <path d="M30 20L15 26V42L30 36Z" fill="#FFE0B2" />
+            </svg>
+        </div>
+        <div data-label="Dynamics 365 Finance">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="dyn4" x1="0" y1="0" x2="40" y2="40">
+                        <stop stop-color="#2E7D32" />
+                        <stop offset="1" stop-color="#66BB6A" />
+                    </linearGradient>
+                </defs>
+                <path d="M0 0L50 18V42L10 50V28L0 22Z" fill="url(#dyn4)" />
+                <path d="M30 20L15 26V42L30 36Z" fill="#C8E6C9" />
+            </svg>
+        </div>
+
+        <!-- ============ POWER PLATFORM ============ -->
+        <div data-label="Power BI">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <rect x="35" y="0" width="15" height="50" fill="#E6AD10" />
+                <rect x="18" y="15" width="15" height="35" fill="#F2C811" />
+                <rect x="0" y="31" width="15" height="19" fill="#F9E01B" />
+            </svg>
+        </div>
+        <div data-label="Power Apps">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="pa1" x1="0" y1="50" x2="30" y2="0">
+                        <stop stop-color="#742774" />
+                        <stop offset="1" stop-color="#BB35A4" />
+                    </linearGradient>
+                    <linearGradient id="pa2" x1="20" y1="0" x2="50" y2="50">
+                        <stop stop-color="#E48CC7" />
+                        <stop offset="1" stop-color="#D467B9" />
+                    </linearGradient>
+                </defs>
+                <path d="M20 3L45 25L20 47L8 35L20 25L8 15Z" fill="url(#pa1)" />
+                <path d="M30 3L48 25L30 47L22 38L30 25L22 12Z" fill="url(#pa2)" />
+            </svg>
+        </div>
+        <div data-label="Power Automate">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="au1" x1="0" y1="0" x2="30" y2="30">
+                        <stop stop-color="#84CAFF" />
+                        <stop offset="1" stop-color="#2A78EE" />
+                    </linearGradient>
+                </defs>
+                <path d="M5 8L25 25L5 42Z" fill="url(#au1)" />
+                <path d="M25 8L45 25L25 42Z" fill="#3B90F5" />
+            </svg>
+        </div>
+        <div data-label="Power Pages">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="pg1" x1="0" y1="0" x2="50" y2="50">
+                        <stop stop-color="#A391E8" />
+                        <stop offset="1" stop-color="#685CD0" />
+                    </linearGradient>
+                </defs>
+                <path d="M25 3L47 22L25 45L3 22Z" fill="url(#pg1)" />
+            </svg>
+        </div>
+        <div data-label="Power Virtual Agents">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="pva1" x1="0" y1="0" x2="50" y2="50">
+                        <stop stop-color="#00B7C3" />
+                        <stop offset="1" stop-color="#00838F" />
+                    </linearGradient>
+                </defs>
+                <rect x="8" y="10" width="34" height="26" rx="5" fill="url(#pva1)" />
+                <circle cx="18" cy="22" r="2.5" fill="#fff" />
+                <circle cx="32" cy="22" r="2.5" fill="#fff" />
+                <path d="M20 42h10v-4h-10z" fill="url(#pva1)" />
+            </svg>
+        </div>
+
+        <!-- ============ AZURE ============ -->
+        <div data-label="Microsoft Azure">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="az1" x1="0" y1="50" x2="50" y2="0">
+                        <stop stop-color="#0078D4" />
+                        <stop offset="1" stop-color="#3B90F5" />
+                    </linearGradient>
+                </defs>
+                <path d="M20 5L5 45H20L25 30L35 45H45L25 5Z" fill="url(#az1)" />
+            </svg>
+        </div>
+        <div data-label="Azure DevOps">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <path d="M5 30L8 27L12 31L9 34L13 38L17 34L21 38L18 41L25 48H40V20L25 3H5V20L5 30Z" fill="#2560E0" />
+                <circle cx="38" cy="10" r="7" fill="#91B0F2" />
+            </svg>
+        </div>
+        <div data-label="Azure AI">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="aai1" x1="0" y1="0" x2="50" y2="50">
+                        <stop stop-color="#3B90F5" />
+                        <stop offset="1" stop-color="#6c5ce7" />
+                    </linearGradient>
+                </defs>
+                <circle cx="25" cy="25" r="18" fill="url(#aai1)" />
+                <path d="M25 14c-4 4-6 8-6 11 0 3.3 2.7 6 6 6s6-2.7 6-6c0-3-2-7-6-11z" fill="#fff" />
+                <circle cx="25" cy="25" r="2" fill="#3B90F5" />
+            </svg>
+        </div>
+        <div data-label="Azure Functions">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="af1" x1="0" y1="0" x2="50" y2="50">
+                        <stop stop-color="#0B53CE" />
+                        <stop offset="1" stop-color="#3B90F5" />
+                    </linearGradient>
+                </defs>
+                <path d="M22 5L10 28h8l-4 17 18-24h-9l6-16z" fill="url(#af1)" />
+            </svg>
+        </div>
+
+        <!-- ============ MICROSOFT 365 ============ -->
+        <div data-label="Microsoft Teams">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <circle cx="36" cy="20" r="6" fill="#5059C9" />
+                <circle cx="20" cy="16" r="9" fill="#7B83EB" />
+                <rect x="14" y="20" width="26" height="26" rx="4" fill="#7B83EB" />
+                <rect x="0" y="18" width="22" height="24" rx="3" fill="url(#tm1)" />
+                <defs>
+                    <linearGradient id="tm1" x1="0" y1="18" x2="22" y2="42">
+                        <stop stop-color="#5A62C3" />
+                        <stop offset="1" stop-color="#3940AB" />
+                    </linearGradient>
+                </defs>
+                <text x="11" y="35" text-anchor="middle" fill="white" font-family="sans-serif" font-weight="700"
+                    font-size="12">T</text>
+            </svg>
+        </div>
+        <div data-label="SharePoint">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <circle cx="18" cy="18" r="14" fill="#036C70" />
+                <circle cx="34" cy="34" r="14" fill="#1A9BA1" />
+                <circle cx="22" cy="34" r="10" fill="#37C6D0" />
+                <rect x="0" y="14" width="24" height="22" rx="3" fill="#03787C" />
+                <text x="12" y="30" text-anchor="middle" fill="white" font-family="sans-serif" font-weight="700"
+                    font-size="14">S</text>
+            </svg>
+        </div>
+        <div data-label="Microsoft Outlook">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <rect width="50" height="50" rx="8" fill="#0364B8" />
+                <circle cx="25" cy="25" r="10" fill="white" />
+                <circle cx="25" cy="25" r="6" fill="#0078D4" />
+            </svg>
+        </div>
+        <div data-label="Microsoft Excel">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <rect width="50" height="50" rx="8" fill="#107C41" />
+                <path d="M12 13H20L25 21L30 13H38L30 25L38 37H30L25 29L20 37H12L20 25Z" fill="white" />
+            </svg>
+        </div>
+        <div data-label="Microsoft Word">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <rect width="50" height="50" rx="8" fill="#2B579A" />
+                <path d="M10 12h6l4 20 4-14h4l4 14 4-20h6l-6 26h-6l-3-12-3 12h-6z" fill="white" />
+            </svg>
+        </div>
+        <div data-label="PowerPoint">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <rect width="50" height="50" rx="8" fill="#B7472A" />
+                <circle cx="25" cy="25" r="14" fill="white" />
+                <circle cx="25" cy="25" r="8" fill="#B7472A" />
+            </svg>
+        </div>
+        <div data-label="OneNote">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <rect width="50" height="50" rx="8" fill="#7719AA" />
+                <path d="M12 12h20l6 6v20H12z" fill="white" opacity="0.9" />
+                <path d="M12 12h20v26H12z" fill="#fff" />
+                <path d="M16 20h12M16 26h12M16 32h8" stroke="#7719AA" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </div>
+
+        <!-- ============ COPILOT ============ -->
+        <div data-label="Microsoft Copilot">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="cop1" x1="0" y1="0" x2="50" y2="50">
+                        <stop stop-color="#FF5A1F" />
+                        <stop offset="0.5" stop-color="#6c5ce7" />
+                        <stop offset="1" stop-color="#3B90F5" />
+                    </linearGradient>
+                </defs>
+                <path d="M25 3c-2 10-8 14-22 16 14 2 20 6 22 16 2-10 8-14 22-16-14-2-20-6-22-16z" fill="url(#cop1)" />
+                <circle cx="25" cy="25" r="3" fill="#fff" />
+            </svg>
+        </div>
+        <div data-label="Copilot Studio">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="cs1" x1="0" y1="0" x2="50" y2="50">
+                        <stop stop-color="#ff5a1f" />
+                        <stop offset="1" stop-color="#6c5ce7" />
+                    </linearGradient>
+                </defs>
+                <rect x="8" y="10" width="34" height="26" rx="6" fill="url(#cs1)" />
+                <circle cx="18" cy="22" r="2.5" fill="#fff" />
+                <circle cx="32" cy="22" r="2.5" fill="#fff" />
+                <path d="M18 28c2 2 12 2 14 0" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none" />
+                <path d="M20 42h10v-4H20z" fill="url(#cs1)" />
+            </svg>
+        </div>
+
+        <!-- ============ DATA & GOVERNANCE ============ -->
+        <div data-label="Microsoft Fabric">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="fb1" x1="0" y1="0" x2="50" y2="50">
+                        <stop stop-color="#F2C811" />
+                        <stop offset="0.5" stop-color="#E6AD10" />
+                        <stop offset="1" stop-color="#ff5a1f" />
+                    </linearGradient>
+                </defs>
+                <path d="M25 4L44 18v20L25 46 6 38V18z" fill="url(#fb1)" opacity="0.9" />
+                <path d="M25 12L36 22v12L25 38 14 34V22z" fill="#fff" opacity="0.35" />
+                <circle cx="25" cy="25" r="4" fill="#fff" />
+            </svg>
+        </div>
+        <div data-label="Microsoft Purview">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="pv1" x1="0" y1="0" x2="50" y2="50">
+                        <stop stop-color="#0078D4" />
+                        <stop offset="1" stop-color="#6c5ce7" />
+                    </linearGradient>
+                </defs>
+                <path d="M25 4L42 12v16c0 10-8 16-17 18-9-2-17-8-17-18V12z" fill="url(#pv1)" />
+                <path d="M18 25l5 5 10-10" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                    fill="none" />
+            </svg>
+        </div>
+        <div data-label="Microsoft Intune">
+            <svg viewBox="0 0 50 50" width="50" height="50" fill="none">
+                <defs>
+                    <linearGradient id="in1" x1="0" y1="0" x2="50" y2="50">
+                        <stop stop-color="#0078D4" />
+                        <stop offset="1" stop-color="#3B90F5" />
+                    </linearGradient>
+                </defs>
+                <rect x="12" y="6" width="26" height="38" rx="4" fill="url(#in1)" />
+                <rect x="16" y="10" width="18" height="26" fill="#fff" opacity="0.9" />
+                <circle cx="25" cy="41" r="1.8" fill="#fff" />
+                <path d="M20 22l4 4 8-8" stroke="#0078D4" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round" fill="none" />
+            </svg>
+        </div>
+    </template>
+
+    <script src="demo.js"></script>
+</body>
+
+</html>
